@@ -10,9 +10,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: build
-        run: docker image build --file Dockerfile --tag index.docker.io/academiaonline/simplilearn-phpinfo:test ${PWD}
+        run: docker image build --file Dockerfile --tag index.docker.io/suvojitchironx/simplilearn-phpinfo:test ${PWD}
       - name: history
-        run: docker image history index.docker.io/academiaonline/simplilearn-phpinfo:test
+        run: docker image history index.docker.io/suvojitchironx/simplilearn-phpinfo:test
       - name: run
         run: docker container run --detach --entrypoint php --name php-test --rm index.docker.io/suvojitchironx/simplilearn-phpinfo:test -f src/index.php -S 0.0.0.0:8080
       - name: top
